@@ -1,0 +1,58 @@
+#alert {
+  position: fixed !important;
+  top: 30px;
+  margin-right: 20px;
+}
+
+@keyframes openModal {
+  0% {
+    margin-right: -500px;
+  }
+  100% {
+    margin-right: 20px;
+  }
+}
+@keyframes closeModal {
+  0% {
+    margin-right: 20px;
+  }
+  100% {
+    margin-right: -500px;
+  }
+}
+.login-wapper {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  box-shadow: 2px 1px 4px 1px whitesmoke, -2px -1px 4px 1px whitesmoke;
+}
+.login-wapper h1 {
+  text-align: center;
+}
+.login-wapper .logo {
+  width: 100%;
+}
+.login-wapper .logo img {
+  width: 100%;
+}
+.login-wapper .username-group {
+  margin: 10px 10px 0;
+  padding: 10px;
+  border: 1px solid black;
+}
+.login-wapper .username-group input {
+  width: 95%;
+}
+.login-wapper .password-group {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+.login-wapper .password-group input {
+  width: 95%;
+}
+.login-wapper button {
+  width: 96%;
+  margin: 0 10px;
+}

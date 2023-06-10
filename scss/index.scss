@@ -1,0 +1,44 @@
+@import "./scssModule/navbar";
+@import "./scssModule/alert";
+:root {
+  --input-color: rgb(87, 218, 87);
+}
+
+dialog {
+  padding: 0 0 5px;
+  top: 5rem;
+  .form-group {
+    margin: 10px;
+    padding: 10px 0 0;
+    background-color: rgb(209, 209, 209);
+    label {
+      padding-left: 5px;
+      color: var(--input-color);
+    }
+    input {
+      border: none;
+      text-indent: 5px;
+      padding: 10px;
+      border-bottom: 2px solid gray;
+      background-color: inherit;
+    }
+
+    select {
+      padding: 10px;
+      option {
+        padding: 10px;
+      }
+    }
+    input:focus {
+      border: none;
+      border-bottom: 2px solid var(--input-color);
+    }
+    .form-message {
+      text-indent: 5px;
+      padding: 5px;
+      color: red;
+    }
+    display: flex;
+    flex-direction: column;
+  }
+}

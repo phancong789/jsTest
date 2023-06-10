@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./scss/assets/css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <dialog id="alert" class="alert alert-success float-end z-3">
+      <h5></h5>
+    </dialog>
+    <nav class="nav">
+      <div>
+        <button class="menuButton"><i class="fa-solid fa-bars"></i></button>
+        <img
+          class="navbar-brand p-2"
+          src="https://httpdl.howizbiz.com/static/img/logoOrigin.7aeebb8a.svg"
+          alt=""
+        />
+        <h1>Hệ Thống Cung Cấp Đữ Liệu Môi Trường</h1>
+      </div>
+      <div id="userinfo" class="user-info">
+        <button class="btn">
+          <img
+            class="navbar-brand"
+            src="https://httpdl.howizbiz.com/static/img/logoOrigin.7aeebb8a.svg"
+            alt=""
+          />
+        </button>
+        <h1 class="userNameDisplay">ten dang nhap</h1>
+        <dialog id="userModal">
+          <div class="d-flex flex-column">
+            <div class="m-auto p-3">
+              <img
+                class="UserIcon"
+                src="https://httpdl.howizbiz.com/static/img/logoOrigin.7aeebb8a.svg"
+                alt=""
+              />
+            </div>
+            <div class="m-auto d-flex flex-column">
+              <p class="userNameDisplay">ten</p>
+              <p class="userRoleDisplay">admin</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button
+                id="userProfilebtn"
+                class="btn float-start text-secondary btn-outline-light"
+              >
+                Hồ sơ
+              </button>
+              <button
+                id="logoutbtn"
+                class="btn text-nowrap float-end me-4 text-danger btn-outline-light"
+              >
+                Đăng Xuất
+              </button>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </nav>
+    <div id="app"></div>
+    <dialog create-modal>
+      <form id="createNewForm">
+        <div class="bg-success d-flex justify-content-between">
+          <p class="text-light ps-3 pe-5 fs-5 pt-3">Thêm Người Dùng Mới</p>
+          <button
+            class="btn close text-light fs-3"
+            type="button"
+            title="Close Modal"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="container">
+          <div class="form-group">
+            <label for="nameInput"><b>tên hiển thị</b></label>
+            <input
+              id="nameInput"
+              type="text"
+              placeholder="Enter name"
+              name="name"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="UserNameInput"><b>tên đăng nhập</b></label>
+            <input
+              type="text"
+              id="UserNameInput"
+              placeholder="Enter Username"
+              name="username"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="EmailInput"><b>Email</b></label>
+            <input
+              type="email"
+              id="EmailInput"
+              placeholder="Enter email"
+              name="email"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="PhoneInput"><b>phone</b></label>
+            <input
+              type="number"
+              id="PhoneInput"
+              placeholder="Enter phone"
+              name="mobile"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="PswInput"><b>Password</b></label>
+            <input
+              type="password"
+              id="PswInput"
+              placeholder="Enter password"
+              name="password"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="PswCm"><b>Password confirmation</b></label>
+            <input
+              type="password"
+              id="PswCm"
+              placeholder="Password confirmation"
+              name="password_confirmation"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label id="roleIdLabel" for="roleId">Chọn Quyền</label>
+            <select id="roleId" name="role_ids"></select>
+            <span class="form-message"></span>
+          </div>
+
+          <button class="float-end btn ms-2 btn-outline-success" type="submit">
+            Thêm Mới
+          </button>
+          <button
+            class="float-end close btn btn-outline-secondary"
+            type="button"
+          >
+            hủy
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog update-modal>
+      <form id="updateForm">
+        <div class="bg-success d-flex justify-content-between">
+          <p class="text-light ps-3 pe-5 fs-5 pt-3">Thêm Người Dùng Mới</p>
+          <button
+            class="btn close text-light fs-3"
+            type="button"
+            title="Close Modal"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="container">
+          <div class="form-group">
+            <label for="UpdateNameInput"><b>tên hiển thị</b></label>
+            <input
+              id="UpdateNameInput"
+              type="text"
+              placeholder="Enter name"
+              name="name"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="UpdateUserNameInput"><b>tên đăng nhập</b></label>
+            <input
+              id="UpdateUserNameInput"
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+              readonly
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="UpdateEmailInput"><b>Email</b></label>
+            <input
+              id="UpdateEmailInput"
+              type="email"
+              placeholder="Enter email"
+              name="email"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="UpdatePhoneInput"><b>phone</b></label>
+            <input
+              id="UpdatePhoneInput"
+              type="number"
+              placeholder="Enter phone"
+              name="mobile"
+            />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label id="UpdateroleIdLabel" for="UpdateroleId">Chọn Quyền</label>
+            <select id="UpdateroleId" name="role_ids"></select>
+            <span class="form-message"></span>
+          </div>
+          <button class="float-end btn ms-2 btn-outline-success" type="submit">
+            cập nhật
+          </button>
+          <button
+            class="float-end close btn btn-outline-secondary"
+            type="button"
+          >
+            hủy
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog class="deleteDialog" delete-modal>
+      <div class="d-flex bg-danger">
+        <h4 class="m-2 text-light">bạn chắc chắn muốn xóa chứ</h4>
+        <button class="btn text-light fs-3 close" type="button">&times;</button>
+      </div>
+      <p class="ms-3 delete-message mt-3">test</p>
+      <div>
+        <button
+          id="deleteButton"
+          class="btn float-end btn-outline-danger m-2 p-2"
+        >
+          đồng ý
+        </button>
+        <button class="btn close float-end btn-outline-secondary p-2 m-2 close">
+          Không
+        </button>
+      </div>
+    </dialog>
+    <script
+      src="https://kit.fontawesome.com/be0cefaa6c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./js/Main.js"></script>
+  </body>
+</html>
